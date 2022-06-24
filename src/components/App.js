@@ -4,7 +4,7 @@ import paintings from '../paintings.json';
 export default function App() {
   return (
     <div>
-      {/* <Painting
+      <Painting
         imageUrl={paintings[0].url}
         title={paintings[0].title}
         author={paintings[0].author.tag}
@@ -29,7 +29,7 @@ export default function App() {
         profileUrl={paintings[2].author.url}
         price={paintings[2].price}
         quantity={paintings[2].quantity}
-      /> */}
+      />
     </div>
   );
 }
