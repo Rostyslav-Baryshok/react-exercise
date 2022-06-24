@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-exercise/static/js/main.c14e9687.js",
+    "main.js": "/react-exercise/static/js/main.e1b221a2.js",
     "index.html": "/react-exercise/index.html",
-    "main.c14e9687.js.map": "/react-exercise/static/js/main.c14e9687.js.map"
+    "main.e1b221a2.js.map": "/react-exercise/static/js/main.e1b221a2.js.map"
   },
   "entrypoints": [
-    "static/js/main.c14e9687.js"
+    "static/js/main.e1b221a2.js"
   ]
 }
