@@ -6,7 +6,7 @@ import {
   TableHeadRow,
   TableHeader,
   TableBodyText,
-} from '../ui/table';
+} from '../user-interface/table';
 
 import transactionsData from 'mock/transactions.json';
 
