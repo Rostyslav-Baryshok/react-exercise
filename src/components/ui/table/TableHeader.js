@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const TableHead = styled.th`
+export const TableHeader = styled.th`
   text-transform: uppercase;
 `;
