@@ -6,7 +6,8 @@ import {
   TableHeadRow,
   TableHeader,
   TableBodyText,
-} from '../user-interface/table';
+} from '../ui/table';
+
 import transactionsData from 'mock/transactions.json';
 
 export const TransactionTable = () => {

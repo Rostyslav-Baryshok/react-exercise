@@ -1,4 +1,4 @@
-export * from './Table';
+export * from '.';
 export * from './TableBody';
 export * from './TableHead';
 export * from './TableRow';
