@@ -1,7 +1,7 @@
-import Painting from './Painting';
+import { Painting } from 'components/Painting';
 import paintings from '../paintings.json';
 
-export default function App() {
+export const App = () => {
   return (
     <div>
       {paintings.map(painting => (
@@ -17,4 +17,4 @@ export default function App() {
       ))}
     </div>
   );
-}
+};

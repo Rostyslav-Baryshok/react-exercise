@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-export default function Painting({
+export const Painting = ({
   imageUrl,
   title,
   profileUrl,
   author = 'Не известно!',
   price,
   quantity,
-}) {
+}) => {
   return (
     <div>
       <img src={imageUrl} alt={title} width="480" />
@@ -19,7 +19,7 @@ export default function Painting({
       <button type="button">Добавить в корзину</button>
     </div>
   );
-}
+};
 Painting.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
