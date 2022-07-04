@@ -10,7 +10,7 @@ export const PrimaryButton = styled.button`
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.acc};
+  background-color: ${({ theme }) => theme.colors.accent};
   text-transform: capitalize;
   cursor: pointer;
   width: 100px;
