@@ -26,8 +26,10 @@ export const TransactionTable = () => {
         <TableBody>
           {transactionsData.transactions.map(
             ({ id, type, amount, created, fee }) => (
-              <TableRow key={id}>
-                <TableBodyText>{type}</TableBodyText>
+              <TableRow type={type} key={id}>
+                <TableBodyText>
+                  {type[0].toUpperCase() + type.slice(1)}
+                </TableBodyText>
                 <TableBodyText>{amount}</TableBodyText>
                 <TableBodyText>{created}</TableBodyText>
                 <TableBodyText>{fee}</TableBodyText>
