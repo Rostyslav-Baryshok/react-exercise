@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
-import { Formik, Form as FormikForm, Field } from 'formik';
+import { Formik, Form as FormikForm } from 'formik';
 import * as yup from 'yup';
 import { PrimaryButton } from 'components/user-interface/buttons';
+import { FormikInput, FormikSelect } from 'components/user-interface/inputs';
+import { currencies } from 'constants';
 
 export class Form extends Component {
-  validationSchema = yup
-    .object()
-    .shape({ amount: yup.string().required('This field is required') });
+  validationSchema = yup.object().shape({
+    amount: yup.string().required('This field is required'),
+    fee: yup.string().required('This field is required'),
+  });
+
+  options = [
+    {
+      label: currencies.USD,
+      value: currencies.USD,
+    },
+    {
+      label: currencies.UAN,
+      value: currencies.UAN,
+    },
+  ];
 
   render() {
     return (
       <Formik
-        initialValues={{ amount: '' }}
+        initialValues={{ amount: '', fee: '' }}
         onSubmit={values => console.log(values)}
         validationSchema={this.validationSchema}
       >
-        {props => (
+        {({ setFieldValue, values }) => (
           <FormikForm>
-            <Field
-              name="amount"
-              type="input"
-              value={props.values.amount}
-              onChange={props.handleChange}
+            <FormikInput name="amount" type="input" />
+            <FormikSelect
+              field={{ name: 'fee' }}
+              form={{ setFieldValue, value: values.fee }}
+              options={this.options}
             />
             <PrimaryButton type="submit">Add {this.props.type}</PrimaryButton>
           </FormikForm>

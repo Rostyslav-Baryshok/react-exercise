@@ -8,7 +8,7 @@ import {
   TableBodyText,
 } from '../user-interface/table';
 
-import transactionsData from 'mock/transactions.json';
+import transactionsData from 'mock/transactions.js';
 import { Container } from 'components/user-interface/Container';
 
 export const TransactionTable = () => {
