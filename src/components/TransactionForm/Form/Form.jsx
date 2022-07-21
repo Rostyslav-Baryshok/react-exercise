@@ -4,6 +4,13 @@ import * as yup from 'yup';
 import { PrimaryButton } from 'components/user-interface/buttons';
 import { FormikInput, FormikSelect } from 'components/user-interface/inputs';
 import { currencies } from 'constants';
+import styled from 'styled-components';
+import { Label } from 'components/user-interface/Label';
+
+const StyledFormikForm = styled(FormikForm)`
+  width: 500px;
+  margin: 0 auto;
+`;
 
 export class Form extends Component {
   validationSchema = yup.object().shape({
@@ -30,15 +37,19 @@ export class Form extends Component {
         validationSchema={this.validationSchema}
       >
         {({ setFieldValue, values }) => (
-          <FormikForm>
-            <FormikInput name="amount" type="input" />
-            <FormikSelect
-              field={{ name: 'fee' }}
-              form={{ setFieldValue, value: values.fee }}
-              options={this.options}
-            />
+          <StyledFormikForm>
+            <Label>
+              <FormikInput name="amount" type="input" />
+            </Label>
+            <Label>
+              <FormikSelect
+                field={{ name: 'fee' }}
+                form={{ setFieldValue, value: values.fee }}
+                options={this.options}
+              />
+            </Label>
             <PrimaryButton type="submit">Add {this.props.type}</PrimaryButton>
-          </FormikForm>
+          </StyledFormikForm>
         )}
       </Formik>
     );

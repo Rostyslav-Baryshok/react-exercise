@@ -34,6 +34,8 @@ export class TransactionForm extends Component {
     });
   }
 
+  handleSubmit(transaction) {}
+
   render() {
     return (
       <Container>

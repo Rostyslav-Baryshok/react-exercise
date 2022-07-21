@@ -8,10 +8,9 @@ import {
   TableBodyText,
 } from '../user-interface/table';
 
-import transactionsData from 'mock/transactions.js';
 import { Container } from 'components/user-interface/Container';
 
-export const TransactionTable = () => {
+export const TransactionTable = ({ transactions }) => {
   return (
     <Container>
       <Table>
@@ -24,18 +23,16 @@ export const TransactionTable = () => {
           </TableHeadRow>
         </TableHead>
         <TableBody>
-          {transactionsData.transactions.map(
-            ({ id, type, amount, created, fee }) => (
-              <TableRow type={type} key={id}>
-                <TableBodyText>
-                  {type[0].toUpperCase() + type.slice(1)}
-                </TableBodyText>
-                <TableBodyText>{amount}</TableBodyText>
-                <TableBodyText>{created}</TableBodyText>
-                <TableBodyText>{fee}</TableBodyText>
-              </TableRow>
-            )
-          )}
+          {transactions.map(({ id, type, amount, created, fee }) => (
+            <TableRow type={type} key={id}>
+              <TableBodyText>
+                {type[0].toUpperCase() + type.slice(1)}
+              </TableBodyText>
+              <TableBodyText>{amount}</TableBodyText>
+              <TableBodyText>{created}</TableBodyText>
+              <TableBodyText>{fee}</TableBodyText>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </Container>
