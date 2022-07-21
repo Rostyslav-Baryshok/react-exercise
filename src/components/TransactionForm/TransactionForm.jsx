@@ -22,19 +22,17 @@ export class TransactionForm extends Component {
     };
   }
 
-  ClickOnWithdraw() {
+  clickOnWithdraw() {
     this.setState({
       type: transactionType.WITHDRAW,
     });
   }
 
-  ClickOnDeposit() {
+  clickOnDeposit() {
     this.setState({
       type: transactionType.DEPOSIT,
     });
   }
-
-  handleSubmit(transaction) {}
 
   render() {
     return (
@@ -42,14 +40,14 @@ export class TransactionForm extends Component {
         <ButtonsWrapper>
           <SecondaryButton
             onClick={() => {
-              this.ClickOnWithdraw();
+              this.clickOnWithdraw();
             }}
           >
             Withdraw
           </SecondaryButton>
           <PrimaryButton
-            oonClick={() => {
-              this.ClickOnDeposit();
+            onClick={() => {
+              this.clickOnDeposit();
             }}
           >
             Deposit
@@ -57,7 +55,7 @@ export class TransactionForm extends Component {
         </ButtonsWrapper>
         {this.state.type && (
           <div>
-            <Form type={this.state.type} />
+            <Form type={this.state.type} onSubmit={this.props.onSubmit} />
           </div>
         )}
       </Container>

@@ -6,6 +6,7 @@ import { FormikInput, FormikSelect } from 'components/user-interface/inputs';
 import { currencies } from 'constants';
 import styled from 'styled-components';
 import { Label } from 'components/user-interface/Label';
+// import { type } from '@testing-library/user-event/dist/type';
 
 const StyledFormikForm = styled(FormikForm)`
   width: 500px;
@@ -33,7 +34,13 @@ export class Form extends Component {
     return (
       <Formik
         initialValues={{ amount: '', fee: '' }}
-        onSubmit={values => console.log(values)}
+        onSubmit={values =>
+          this.props.onSubmit({
+            ...values,
+            type: this.props.type,
+            created: new Date().getTime(),
+          })
+        }
         validationSchema={this.validationSchema}
       >
         {({ setFieldValue, values }) => (
